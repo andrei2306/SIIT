@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Loading</title>
+		<meta charset="UTF-8">
+		<style>
+			body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+.thxMessage {
+	width:300px;
+	
+	padding: 12px;
+  margin-top: 6px;
+  margin: 0 auto;
+  
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 50px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* textarea.invalidInput = Element textarea cu clasa invalidInput */
+input[type=text].invalidInput, select.invalidInput, textarea.invalidInput, div.invalidInput{
+	border: 1px solid red;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+label[for="subject"]{
+	display: block;
+	margin-top: 15px;
+}
+/* Selector de atribut */
+input[type="submit"]{
+
+}
+
+.genderInputs {
+	display: inline-block;
+}
+
+.thxMessage{
+	background-color: #4CAF50;
+	display: none;
+	width: 350px;
+}
+
+.thxMessageActive{
+	display:block;
+}
+
+#photo {
+	width:60% ;
+	margin-left: 100px;
+}
+
+.textArea{
+	height:170px
+}
+			
+		</style>
+		
+	</head>
+	<body>
+		<div class="container">
+			<div style="text-align:center">
+			  <h2>Contact form</h2>
+			  <p class="thxMessage" >vsvdfbvdgbfg</p>
+			 
+			</div>
+			<div class="row">
+			  <div class="column">
+				<img src="icon_contact_support@2x.png" id="photo";>
+			  </div>
+			  <div class="column">
+				<form onsubmit="validare(event)">
+				  <label for="fname">First Name</label>
+				  <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+				  <label for="lname">Last Name</label>
+				  <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+				  <div class="genderInputs">
+					<p>Gender</p>
+					<label><input type="radio" id="male" name="Gender" value="male"/>M</label> 
+					<label><input type="radio" id="female" name="Gender" value="female"/>F</label> 
+				  </div>	
+
+				  <label for="subject">Subject</label>
+
+				  <textarea id="subject" name="subject" placeholder="Write something.." class="textArea"></textarea>
+
+				  <input type="submit" value="Submit">
+				</form>
+			  </div>
+			</div>
+		  </div>
+		  <script>
+			  	function validate(){
+					var submit = document.querySelector('input[type = "submit"]');
+				
+					submit.addEventListener("click", function(){
+						event.preventDefault();
+						var nameStatus = validateNames();
+						var genderStatus = validateGender();
+						var textAreaStatus = validateTextarea();
+						var thxMessage = document.querySelector(".thxMessage"); 
+						if (nameStatus && genderStatus && textAreaStatus  ){
+							thxMessage.classList.add("thxMessageActive");
+							changePhoto();
+						}
+						
+					});
+				  }
+
+				validate();
+				  
+			  	function validateNames(){
+					  var firstName = document.querySelector("#fname");
+					  var lastName = document.querySelector("#lname");
+					  var thxMessage = document.querySelector(".thxMessage");
+					  var regex = /^[A-Za-z]+$/;
+					  var message = undefined;	 
+					  
+					  if (regex.test(firstName.value) && regex.test(lastName.value)) {
+						  firstName.classList.remove("invalidInput");
+						  lastName.classList.remove("invalidInput");
+
+						  message = "Thank you for contacting us, " + firstName.value + " " + lastName.value + "!";
+						  thxMessage.textContent = message;
+						  console.log(message);
+						  return true;
+					  } 
+					  
+					  if (!regex.test(firstName.value)){
+						  firstName.classList.add("invalidInput");
+					  }
+
+					  if (!regex.test(lastName.value)){
+						  lastName.classList.add("invalidInput");
+					  }
+
+					  return false;
+					  
+				  }
+
+
+				function validateGender(){
+					var genderInputs = document.querySelector(".genderInputs");
+					var male = document.querySelector("#male");
+					var female = document.querySelector("#female");
+					var selectedGender = undefined;
+
+					if (male.checked || female.checked){
+						genderInputs.classList.remove("invalidInput");
+
+						if (male.checked) {
+							selectedGender = male.value;
+						} else {
+							selectedGender = female.value;
+						}
+						return true;
+						
+					} else if(!male.checked || !female.checked){
+						genderInputs.classList.add("invalidInput");
+						return false;
+						
+					}
+					
+				}
+
+				function validateTextarea(){
+					var textArea = document.querySelector("#subject");
+					var message = undefined;	 
+
+					if(textArea.value !== null && textArea.value !== undefined && textArea.value !== ""){
+						textArea.classList.remove("invalidInput");
+						message = textArea.value;
+						console.log(message);
+						return true;
+						
+					} 
+					
+					textArea.classList.add("invalidInput")
+					return false;
+
+
+				}
+
+				function changePhoto(){
+					document.getElementById("photo").src = "ok.svg" ;
+					
+				}
+
+				  
+			
+				// function validare(event){
+				// 	event.preventDefault();
+				
+				// 	var nume = document.querySelector("[name='firstname']").value;
+				// 	if(nume.length<3){
+				// 		document.querySelector("[name='firstname']").classList.add("invalid");
+						
+				// 	}
+					
+				// }
+			</script>
+		  
+	</body>
+</html>
+
