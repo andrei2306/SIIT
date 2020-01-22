@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: honeydew;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  .thxMessage {
+      width:300px;
+      
+      padding: 12px;
+    margin-top: 6px;
+    margin: 0 auto;
+    
+  }
+  
+  /* Style inputs */
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    border-radius: 15px;
+  }
+  
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Style the container/contact section */
+  .container {
+    border-radius: 20px;
+    background-color: #d8d1d1;
+    padding: 10px;
+    position: fixed;
+    top: 200px;
+    left: 30%;
+    margin-top: -150px;
+    margin-left: -50px;
+    width: 700px;
+    height: 650px;
+  }
+  
+  /* Create two columns that float next to eachother */
+  .column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  /* textarea.invalidInput = Element textarea cu clasa invalidInput */
+  input[type=text].invalidInput, select.invalidInput, textarea.invalidInput, div.invalidInput{
+      border: 1px solid red;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  label[for="subject"]{
+      display: block;
+      margin-top: 15px;
+  }
+  /* Selector de atribut */
+  input[type="submit"]{
+  
+  }
+  
+  .genderInputs {
+      display: inline-block;
+  }
+  
+  .thxMessage{
+      background-color: #4CAF50;
+      display: none;
+      width: 350px;
+      border-radius: 15px;
+  }
+  
+  .thxMessageActive{
+      display:block;
+  }
+  
+  #photo {
+      width: 67%;
+      margin-left: 70px;
+      margin-top: 70px;
+  }
+  
+  .textArea{
+      height:170px
+  }
