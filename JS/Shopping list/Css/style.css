@@ -10,11 +10,16 @@
     margin:0 auto;
     text-align: center;
     margin-top:70px;
+    border: 2px solid;
+    padding: 40px;
 }
 h2 {
     margin-bottom:50px;
 }
 .buyed .item-name {
     text-decoration: line-through;
+    
+    
+body{
 
-
+}

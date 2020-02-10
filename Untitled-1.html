@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <title>Agenda Telefonica</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <link href="1-agenda-telefonica/main.css" rel="stylesheet">
+        <script >
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        </script>
+</head>
+
+    <body >
+        <div class="content">
+            <h1 class="title">Agenda Telefonica</h1>
+            <form>
+                <div class="form-row align-item-center ">
+                    <div class="col">
+                        
+                        <input type="text" class="form-control" id="name" name="firstname" placeholder="Nume..">
+                    </div>
+
+                    <div class="col">
+                        <input type="text" class="form-control" id="telephone" name="phone" placeholder="Telefon..">
+                    </div>
+
+                    <div class="col">
+                        <input type="button" value="Adauga Contact" id="submit-button" class="btn btn-primary float-right">
+                    </div>
+                </div>
+            </form>
+
+            <table class="table table-hover table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nume</th>
+                    <th scope="col">Telefon</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody class="table-body"></tbody>
+            </table>
+    </body>
+
+</html>

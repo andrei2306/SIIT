@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Meniu</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+            
+        <link rel="stylesheet" href="style.css">
+        <script src="index.js"></script>
+    </head>
+
+    <body onload="getItemsFromDatabase(displayProduse);">
+        <div class="header">
+            <p>
+                <a class="btn btn-lg btn-primary " role="button" href="Admin/index.html">Admin</a>
+                <a class="btn btn-lg btn-primary " role="button" href="contact.html">Contact Us!</a>
+            </p>
+           <a href="index.html">
+            <img src="lucias-restaurant-terrace-bar-logo-997AA4FDEA-seeklogo.com.png" a href id="logo" >
+           </a>    
+        </div>
+        <div class="main">
+            <div class="input">
+                <div class="form-inline mt-2 mt-md-0">
+                    <input autocomplete="off" class="form-control mr-sm-0" id="input" type="text" placeholder="Put here the ingredient">
+                    <button class="btn btn-success my-2 my-sm-2" type="submit" onclick="getItemsThatContainIngredient();">Search For intredient</button>
+                </div>
+                <div class="menu">
+
+                </div>
+
+            </div>
+        </div>
+       
+    </body>
+
+</html>
