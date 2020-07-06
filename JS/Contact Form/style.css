@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: honeydew;
+    background-color: #fece0c;
   }
   
   * {
@@ -27,7 +27,7 @@ body {
   }
   
   input[type=submit] {
-    background-color: #4CAF50;
+    background-color: #fece0c;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -36,13 +36,13 @@ body {
   }
   
   input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: #fece0c;
   }
   
   /* Style the container/contact section */
   .container {
     border-radius: 20px;
-    background-color: #94faff;
+    background-color: white;
     padding: 10px;
     position: fixed;
     top: 200px;
